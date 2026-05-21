@@ -1,0 +1,26 @@
+:root {
+  --main-bg-color: rgb(8, 12, 26);
+  --main-text-color: rgb(174, 193, 214);
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "Inter";
+  color: var(--main-text-color);
+  margin: 0;
+
+  .body_inner {
+    padding: 2rem;
+  }
+
+  .main_header {
+    text-align: center;
+    position: relative;
+    border-bottom: 1px solid var(--main-text-color);
+
+    h1 {
+      margin: 0.25rem;
+      color: white;
+    }
+  }
+}
