@@ -9,7 +9,23 @@ var Bibliothek = function () {
 
     if (!obj) return;
 
+    var reservedKeys = [
+      "tagName",
+      "children",
+      "wrapper",
+      "text",
+      "addEvent",
+      "pieces",
+      "options",
+    ];
+
     obj.attributes = obj.attributes || {};
+
+    for (var key in obj) {
+      if (reservedKeys.indexOf(key) === -1) {
+        obj.attributes[key] = obj[key];
+      }
+    }
 
     if (!obj.tagName) {
       console.log("createElement: not set a tagName in " + obj);
