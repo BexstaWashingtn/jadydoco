@@ -178,14 +178,9 @@ var Bibliothek = function () {
   };
 
   this.render = function render(wrapper, node) {
-    var element = this.createElement({
-      tagName: node.tagName,
-      attributes: {
-        ...(node.attributes || {}),
-        ...(node.text ? { innerHTML: node.text } : {}),
-      },
-      wrapper: wrapper,
-    });
+    node.wrapper = wrapper;
+
+    var element = this.createElement(node);
 
     if (node.children && Array.isArray(node.children)) {
       for (var i = 0; i < node.children.length; i++) {
