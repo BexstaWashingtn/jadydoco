@@ -7,7 +7,9 @@ var Bibliothek = function () {
   this.createElement = function createElement(obj) {
     // EXIST TAGNAME
 
-    if (typeof obj == undefined) return;
+    if (!obj) return;
+
+    obj.attributes = obj.attributes || {};
 
     if (!obj.tagName) {
       console.log("createElement: not set a tagName in " + obj);
@@ -63,6 +65,10 @@ var Bibliothek = function () {
     }
 
     // ADD ATTRIBUTES TO COPIES OF ELEMENT
+
+    if (obj.text) {
+      obj.attributes.innerHTML = obj.text;
+    }
 
     if (obj.attributes) if (obj.attributes.id) var idMaxSizeLooper = 0;
     if (obj.attributes.name) var nameMaxSizeLooper = 0;
@@ -156,7 +162,26 @@ var Bibliothek = function () {
       }
     }
 
-    return elements;
+    return elements.length === 1 ? elements[0] : elements;
+  };
+
+  this.render = function render(wrapper, node) {
+    var element = this.createElement({
+      tagName: node.tagName,
+      attributes: {
+        ...(node.attributes || {}),
+        ...(node.text ? { innerHTML: node.text } : {}),
+      },
+      wrapper: wrapper,
+    })[0];
+
+    if (node.children && Array.isArray(node.children)) {
+      for (var i = 0; i < node.children.length; i++) {
+        this.render(element, node.children[i]);
+      }
+    }
+
+    return element;
   };
 
   this.replaceElements = function (obj) {
