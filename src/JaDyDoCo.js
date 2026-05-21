@@ -1,6 +1,7 @@
 // Javascript Dynamic Dom Constructor
 // Autor: Thomas Badrow
-// Version; Alpha xxx
+// Date: 2017
+// Version: Alpha xxx
 
 var Bibliothek = function () {
   this.createElement = function createElement(obj) {
