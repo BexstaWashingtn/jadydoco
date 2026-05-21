@@ -173,7 +173,7 @@ var Bibliothek = function () {
         ...(node.text ? { innerHTML: node.text } : {}),
       },
       wrapper: wrapper,
-    })[0];
+    });
 
     if (node.children && Array.isArray(node.children)) {
       for (var i = 0; i < node.children.length; i++) {
