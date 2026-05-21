@@ -80,10 +80,6 @@ var Bibliothek = function () {
       for (var i in obj.attributes) {
         if (typeof obj.attributes[i] == "object") {
           if (i == "class") {
-            if (typeof obj.attributes.class == "string") {
-              elements[piece].classList.add(obj.attributes.class);
-            }
-
             for (var k in obj.attributes.class) {
               elements[piece].classList.add(obj.attributes[i][k]);
             }
