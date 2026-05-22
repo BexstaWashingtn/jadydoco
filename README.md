@@ -80,8 +80,6 @@ Many concepts explored in JaDyDoCo later appeared again in modern frontend ecosy
 ### Frontend
 
 - JavaScript (ES5 / partially modernized ES6 concepts)
-- HTML5
-- CSS3
 - DOM API
 
 ---
