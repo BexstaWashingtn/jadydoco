@@ -19,10 +19,62 @@ The project was revisited and modernized in 2026 as part of a technical and arch
 - Nested UI components
 - Event handler abstraction
 - Automatic attribute mapping
+- Automatic wrapper injection
 - Dynamic form generation
 - Reusable UI logic
 - AJAX-based UI interactions
 - CMS integration for dynamic content creation
+
+### Special Features
+
+- Multiple class support
+
+```javascript
+class: ["button", "primary", "active"]
+```
+
+- Automatic element duplication via attribute arrays
+
+```javascript
+id: ["item_1", "item_2", "item_3"];
+```
+
+- Manual element duplication using `pieces`
+
+```javascript
+pieces: 5;
+```
+
+- Recursive nested UI structures using `children`
+
+```javascript
+children: [...]
+```
+
+- Simplified text rendering
+
+```javascript
+text: "Hello World";
+```
+
+- Automatic attribute assignment without explicit `attributes` object
+
+```javascript
+{
+  tagName: "a",
+  href: "#",
+  class: "button"
+}
+```
+
+- Declarative event binding
+
+```javascript
+addEvent: {
+  action: "click",
+  handler: function () {}
+}
+```
 
 ---
 
