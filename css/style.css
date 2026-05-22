@@ -298,6 +298,24 @@ body {
             left: 50%;
             transform: translateX(-50%);
           }
+
+          #output {
+            position: absolute;
+            right: 0.5rem;
+            bottom: 0.5rem;
+            color: var(--blue-20);
+            font-size: 0.75rem;
+            font-weight: 400;
+            z-index: 3;
+
+            @media (max-width: 460px) {
+              font-size: 0.6rem;
+              span {
+                display: block;
+                text-align: right;
+              }
+            }
+          }
         }
       }
     }

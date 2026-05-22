@@ -40,6 +40,11 @@ function createScene(scene) {
           },
         ],
       },
+      {
+        tagName: "div",
+        id: "output",
+        text: "Scene is being rendered ..",
+      },
     ],
   });
 }

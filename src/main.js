@@ -55,3 +55,11 @@ async function loadCodePreview() {
 }
 
 loadCodePreview();
+
+const stats = {
+  stars: document.querySelectorAll(".star").length,
+  nodes: document.querySelector("#app").querySelectorAll("*").length,
+};
+
+document.querySelector("#output").innerHTML =
+  `<span>${stats.stars} stars rendered,</span> <span>${stats.nodes} DOM nodes generated,</span> <span> recursive render engine active</span>`;
