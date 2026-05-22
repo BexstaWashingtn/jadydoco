@@ -108,7 +108,7 @@ function createUiMap(app) {
                   {
                     tagName: "div",
                     class: "description",
-                    text: "Diese Demo zeigt, wie mit JaDyDoCo ein gesamtes Userinterface dynamisch generiert wird.",
+                    text: "Diese Demo zeigt, wie mit JaDyDoCo dynamische Userinterfaces über deklarative JavaScript-Strukturen rekursiv generiert werden.",
                   },
                 ],
               },
@@ -134,6 +134,24 @@ function createUiMap(app) {
                 id: "render_scene",
               },
             ],
+          },
+        ],
+      },
+      {
+        tagName: "footer",
+        class: "footer",
+        children: [
+          {
+            tagName: "span",
+            text: "Renderer: JaDyDoCo",
+          },
+          {
+            tagName: "span",
+            text: "UI: JSON-driven recursive rendering",
+          },
+          {
+            tagName: "span",
+            text: "Scene: Procedural DOM generation",
           },
         ],
       },

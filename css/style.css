@@ -19,8 +19,9 @@
   --main-border-color: var(--blue-60);
   --main-container-bg-color: var(--blue-90);
 
-  --scrollbar-bg-color: var(-main-bg-color) --scrollbar-color: var(--blue-50)
-    --button-border-color: var(--blue-60);
+  --scrollbar-bg-color: var(-main-bg-color);
+  --scrollbar-color: var(--blue-50);
+  --button-border-color: var(--blue-60);
   --button-bg-color: var(--blue-90);
   --button-bg-hover-color: var(--blue-70);
   --button-border-hover-color: var(--blue-50);
@@ -74,6 +75,11 @@ body {
     gap: 1rem;
     max-height: 100vh;
     box-sizing: border-box;
+
+    @media (max-width: 869px) {
+      min-height: 100vh;
+      max-height: none;
+    }
   }
 
   .main_header {
@@ -109,6 +115,10 @@ body {
         background-color 0.1s ease-in-out,
         border-color 0.1s ease-in-out;
 
+      @media (max-width: 768px) {
+        top: 30%;
+      }
+
       &:hover {
         background-color: var(--button-bg-hover-color);
         border-color: var(--button-border-hover-color);
@@ -117,23 +127,46 @@ body {
       .label {
         font-weight: 400;
       }
+
+      @media (max-width: 768px) {
+        .label {
+          display: none;
+        }
+        .icon {
+          width: 18px;
+        }
+      }
     }
   }
 
   .main {
     display: grid;
-    grid-template-columns: minmax(240px, 460px) 1fr;
+    grid-template-columns: minmax(320px, 460px) 1fr;
     gap: 1rem;
     font-size: 0.85rem;
     font-weight: 300;
     flex: 1;
     min-height: 0;
+    grid-template-areas: "aside scene";
+
+    @media (max-width: 1240px) {
+      grid-template-columns: minmax(280px, 320px) 1fr;
+    }
+    @media (max-width: 869px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "scene" "aside";
+    }
 
     .aside {
       display: grid;
-      grid-template-rows: minmax(0, 1fr) 205px;
+      grid-template-rows: minmax(0, 1fr) 120px;
       gap: 1rem;
       min-height: 0;
+      grid-area: aside;
+
+      @media (max-width: 869px) {
+        max-height: none;
+      }
 
       .code_con {
         background-color: var(--main-container-bg-color);
@@ -187,6 +220,11 @@ body {
       display: flex;
       flex-direction: column;
       min-height: 0;
+      grid-area: scene;
+
+      @media (max-width: 869px) {
+        min-height: 80vh;
+      }
 
       .scene_header {
         flex: 0 0 auto;
@@ -262,6 +300,13 @@ body {
           }
         }
       }
+    }
+  }
+  .footer {
+    text-align: right;
+    span {
+      font-size: 0.75rem;
+      font-weight: 200;
     }
   }
 }
