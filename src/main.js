@@ -14,8 +14,6 @@ function starsGenerator(container) {
 
   const starCount = Math.floor(area / starDensity);
 
-  console.log("starCount", starCount);
-
   for (let i = 0; i < starCount; i++) {
     const star = document.createElement("span");
 
