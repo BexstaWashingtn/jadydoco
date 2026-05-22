@@ -1,6 +1,39 @@
 :root {
-  --main-bg-color: rgb(8, 12, 26);
-  --main-text-color: rgb(174, 193, 214);
+  --blue-100: #031620;
+  --blue-90: #06202d;
+  --blue-80: #0a2b38;
+  --blue-70: #0d3643;
+  --blue-60: #12424f;
+  --blue-50: #215869;
+  --blue-40: #3f7485;
+  --blue-30: #6399aa;
+  --blue-20: #87becd;
+  --blue-10: #b5dbe5;
+
+  --white: #ffffff;
+
+  --main-bg-color: var(--blue-100);
+  --main-text-color: var(--white);
+  --main-border-color: var(--blue-60);
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.button {
+  border-radius: 1rem;
+  border: 1px solid var(--main-border-color);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 body {
@@ -10,17 +43,63 @@ body {
   margin: 0;
 
   .body_inner {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .main_header {
     text-align: center;
     position: relative;
-    border-bottom: 1px solid var(--main-text-color);
+    border-bottom: 1px solid var(--main-border-color);
+    padding-block: 0.5rem;
 
-    h1 {
-      margin: 0.25rem;
-      color: white;
+    .headline_container {
+      margin-bottom: 1rem;
+    }
+
+    span {
+      display: block;
+      font-weight: 200;
+
+      &.subtitle {
+        font-size: 0.7rem;
+      }
+
+      &.description {
+        font-size: 1.2rem;
+      }
+    }
+
+    .button_github {
+      background-color: var(--blue-90);
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition:
+        background-color 0.1s ease-in-out,
+        border-color 0.1s ease-in-out;
+
+      &:hover {
+        background-color: var(--blue-70);
+        border-color: var(--blue-50);
+      }
+
+      .label {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) 1fr;
+    gap: 1rem;
+
+    .aside {
+      display: grid;
+      grid-template-rows: auto 205px;
+      gap: 1rem;
+      height: 100%;
     }
   }
 }
