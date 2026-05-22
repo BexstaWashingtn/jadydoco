@@ -44,3 +44,16 @@ function starsGenerator(container) {
 
 const sky_stars = document.getElementById("sky_stars");
 starsGenerator(sky_stars);
+
+async function loadCodePreview() {
+  const codePan = document.querySelector("#code_pan");
+
+  if (!codePan) return;
+
+  const response = await fetch("../src/ui.map.js");
+  const code = await response.text();
+
+  codePan.textContent = code;
+}
+
+loadCodePreview();
