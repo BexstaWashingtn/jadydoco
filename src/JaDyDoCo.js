@@ -178,6 +178,8 @@ var Bibliothek = function () {
   };
 
   this.render = function render(wrapper, node) {
+    if (!wrapper || !node) return;
+
     node.wrapper = wrapper;
 
     var element = this.createElement(node);
