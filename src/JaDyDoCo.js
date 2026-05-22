@@ -1,6 +1,6 @@
 // Javascript Dynamic Dom Constructor
 // Autor: Thomas Badrow
-// Date: 2017
+// Date: 2016/17
 // Version: Alpha xxx
 
 var Bibliothek = function () {
