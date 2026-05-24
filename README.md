@@ -10,6 +10,14 @@ The project was revisited and modernized in 2026 as part of a technical and arch
 
 ---
 
+## Live Demo
+
+### Legacy Version (v0.5.0)
+
+🔗 https://jadydoco.vercel.app/
+
+---
+
 ## Features
 
 - Dynamic DOM generation
